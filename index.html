@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>LegalMatch - by: Kenneth F. Melicado</title>
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="grid.css" rel="stylesheet">
+  </head>
+  
+  <script>
+  	var zipdatavar = ['Morris, IL 60450', 'Morris, CT 06763', 'Nowheresville, XX 00000'];
+
+	function matchZipdata(input) {
+	  var reg = new RegExp(input.split('').join('\\w*').replace(/\W/, ""), 'i');
+	  return zipdatavar.filter(function(zipdata) {
+		if (zipdata.match(reg)) {
+		  return zipdatavar;
+		}
+	  });
+	}
+	
+	function changeInput(val) {
+	   var autoCompleteResult = matchZipdata(val);
+	   if(val != ""){
+		   document.getElementById("resultdata").style.display = "block";
+		   document.getElementById("resultdata").innerHTML = autoCompleteResult;
+	   }else{
+		   document.getElementById("resultdata").style.display = "none";
+	   }
+	}
+	
+  </script>
+  
+  <body>
+    <div class="container">
+        <div class="header">
+            <div class="row">
+                <div class="col-md-8" id="logo"><img src="img/logo.png"></div>
+                <div class="col-md-4"><img src="img/head-right.png"></div>
+            </div>
+        </div> 	
+	</div>
+    
+    <div class="container-body">
+    	<div class="container">
+        	<h1>Find a Lawyer for your Legal Issue</h1>
+            <p class="lead">Fast, Free, and Confidential</p>
+            <div class="row">
+            	<div class="col-md-5">
+                    <form autocomplete="off">
+                    <div class="spacer"></div>
+                    <p>
+                        <label>Enter Zip Code or City:</label><br />
+                        <input type="text" name="zip" onkeyup="changeInput(this.value)" placeholder="Does not have to be where you live" id="zip" />
+                        <div id="resultdata"></div>
+                    </p>
+                    <div class="spacer"></div>
+                    <p>
+                        <label>Enter Zip Code or City:</label><br />
+                        <select required class="cat" id="cat" >
+                            <option value="" disabled selected>Click to choose a legal category</option>
+                            <option value="Family">Family</option>
+                            <option value="Criminal Defense">Criminal Defense</option>
+                            <option value="Business">Business</option>
+                            <option value="Personal Injury">Personal Injury</option>
+                            <option value="Bankruptcy & Services">Bankruptcy & Services</option>
+                            <option value="Employment">Employment</option>
+                            <option value="Real Estate">Real Estate</option>
+                            <option value="Immigration">Immigration</option>
+                            <option value="Wills, Trusts & Estates">Wills, Trusts & Estates</option>
+                            <option value="Government">Government</option>
+                            <option value="Intellectual Property">Intellectual Property</option>
+                        </select>
+                    </p>
+                    </form>
+            	</div>
+                <div class="col-md-1"></div>
+                <div class="col-md-6">
+                	<p><h4>Clients review LegalMatch lawyers</h4></p>
+                    <div class="row">
+                    	<div class="col-md-4" >
+                        	<div class="profile_left">
+                            	<img src="img/profile_1.png"><br /><strong>Mitchell M.</strong><br />Cherry Hill, NJ
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                        	<div class="profile_right">
+                            	<p><strong>Family Law</strong>  <img src="img/stars.png"></p>
+                                <p><i>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ..."</i></p>
+                                <p class="right"><a href="#"><img src="img/readreview.png"></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                    	<div class="col-md-4" >
+                        	<div class="profile_left">
+                            	<img src="img/profile_2.png"><br /><strong>Joel C.</strong><br />Little Rock, AK
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                        	<div class="profile_right">
+                            	<p><strong>Job & Employment Law</strong>  <img src="img/stars.png"></p>
+                                <p><i>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ..."</i></p>
+                                <p class="right"><a href="#"><img src="img/readreview.png"></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                    	<div class="col-md-4" >
+                        	<div class="profile_left">
+                            	<img src="img/profile_3.png"><br /><strong>Brigida R.</strong><br />Dallas, TX
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                        	<div class="profile_right">
+                            	<p><strong>Family Law</strong>  <img src="img/stars.png"></p>
+                                <p><i>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ..."</i></p>
+                                <p class="right"><a href="#"><img src="img/readreview.png"></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+		</div>
+    </div>
+    <div class="spacer"></div>
+    <div class="container">
+    	<div class="footer">
+        	<div class="row">
+            	<div class="col-md-3">
+                	<img src="img/logo_footer.png">
+                </div>
+                <div class="col-md-6">
+                    <div class="spacer"><br /></div>
+                	<ul>
+                    	<li class="menulistfirst"><span><a href="#">User Agreement</a></span></li>
+                        <li><span><a href="#">Privacy Policy</a></span></li>
+                        <li><span><a href="#">Site Map</a></span></li>
+                    </ul>
+                    <div class="spacer"><br /></div>
+                    <p>Copyright 1999-2016 LegalMatch. All rights reserved. LegalMatch &reg;, the LegalMatch logo, and<br />the tradedress are trademarks of LegalMatch. Patents Pending.</p>
+                </div>
+                <div class="col-md-3">
+                	<img src="img/truste.png"><br /><img src="img/bbb.png">
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <div class="container">
+  	<div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+      	<div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="img/placeholder_2.png" height="30" width="30"><span id="option-selected"></span>
+            <div class="row">
+            	<div class="col-md-6">
+                	<input type="checkbox"> Adoptions<br />
+                    <input type="checkbox"> Guardianship<br />
+                    <input type="checkbox"> Child Custody and Visitation<br />
+                    <input type="checkbox"> Paternity
+                </div>
+                <div class="col-md-6">
+                	<input type="checkbox"> Child Support<br />
+                    <input type="checkbox"> Separations<br />
+                    <input type="checkbox"> Divorse<br />
+                    <input type="checkbox"> Spousal Support or Alimony
+                </div>
+            </div>
+            <div class="findalawyer">FIND A LAWYER NOW</div>
+          </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>  
+  </div>	
+</div>
+
+<script>
+	var modal = document.getElementById('myModal');
+	var span = document.getElementsByClassName("close")[0];
+	var select = document.getElementById("cat"),
+    showOption = document.querySelector('#option-selected');
+
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+	
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+		modal.style.display = "none";
+	  }
+	}
+
+	
+	select.addEventListener('change', function(){
+      modal.style.display = "block"
+	  showOption.textContent = "Which " + this.value + " apply to your case?";
+	});
+</script>
